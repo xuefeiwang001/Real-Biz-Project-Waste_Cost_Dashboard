@@ -32,6 +32,8 @@ This public repository uses **anonymised CSV samples** instead, so it is safe to
 └── .streamlit/
     └── secrets_template.toml      # Example secrets file (no real credentials)
 
+```
+
 ## 🔐 About Real Databases vs Demo Data
 
 In the original internal project:
@@ -124,4 +126,5 @@ This project is shared under the MIT License.
 📘 MSc in Data Analytics and AI
 📘 MSc in Statistics
 🔍 Driven to transform raw data into strategic insights that lead to real impact.
+
 📧 [xuefei.wang.fr@gmail.com]
