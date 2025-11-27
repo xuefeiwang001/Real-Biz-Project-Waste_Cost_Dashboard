@@ -150,6 +150,7 @@ def fetch_dbu_from_snowflake(conn) -> pd.DataFrame:
     FROM DBU
     WHERE PRODUIT IN ('FR-DBU-S', 'FR-DBU-R')
       AND ROI_BIND_PMC = TRUE
+      AND DBU_STOCK_IN_AT > '2023-12-31'
     """
     df = pd.read_sql(sql, conn)
 
@@ -195,7 +196,7 @@ def fetch_inrooissy_no_pmcdbu_from_postgres(conn) -> pd.DataFrame:
     FROM whs_box_operation wbo
     JOIN sale_order_box sob ON wbo.reference = sob.id
     WHERE wbo.warehouse = 'EP_CL1' 
-      AND wbo.stock_in_at > '2024-01-01' 
+      AND wbo.stock_in_at > '2023-12-31' 
       AND wbo.bind_pmc = false 
       AND wbo.stock_in_pda_version IS NOT NULL 
     """
@@ -721,3 +722,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
